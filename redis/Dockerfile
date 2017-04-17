@@ -1,7 +1,6 @@
 FROM debourge/base:latest
 MAINTAINER Derek Bourgeois <debourge@cisco.com>
 
-
 # clean up our mess
 RUN apt-get remove --purge -y software-properties-common && \
     apt-get autoremove -y && \
