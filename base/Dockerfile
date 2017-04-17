@@ -19,3 +19,9 @@ RUN apt-get install -y \
     git \
     curl \
     nano
+
+# create non-root user
+ARG PUID=1000
+ARG PGID=1000
+RUN groupadd -g $PGID ubuntu && \
+    useradd -u $PUID -g ubuntu -m ubuntu
