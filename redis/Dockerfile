@@ -1,6 +1,10 @@
 FROM debourge/base:latest
 MAINTAINER Derek Bourgeois <debourge@cisco.com>
 
+# add some repositories
+RUN apt-add-repository ppa:rwky/redis -y && \
+    apt-get update
+
 # clean up our mess
 RUN apt-get remove --purge -y software-properties-common && \
     apt-get autoremove -y && \
