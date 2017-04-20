@@ -5,6 +5,9 @@ MAINTAINER Derek Bourgeois <debourge@cisco.com>
 RUN apt-add-repository ppa:chris-lea/redis-server -y && \
     apt-get update
 
+# install redis
+RUN apt-get install -y redis-server
+
 # clean up our mess
 RUN apt-get remove --purge -y software-properties-common && \
     apt-get autoremove -y && \
